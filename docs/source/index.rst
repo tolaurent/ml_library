@@ -1,24 +1,17 @@
-Welcome to Lumache's documentation!
+Welcome to Machine Learning / Deep learning documentation
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+Welcome to the Ultimate Machine Learning and Deep Learning Hints, Tips, and Cheatsheet!
+Are you ready to embark on an exciting journey into the world of machine learning and deep learning? 
+Whether you're a seasoned data scientist looking to stay at the cutting edge of technology or a curious beginner eager to dive into the fascinating realm of artificial intelligence, you've come to the right place.
+Our website is your one-stop destination for all things related to machine learning and deep learning. We've curated a treasure trove of hints, tips, and a comprehensive cheatsheet to make your learning journey as smooth and rewarding as possible.
 
-Lumache has its documentation hosted on Read the Docs.
-
-.. note::
-
-   This project is under active development.
 
 Contents
 --------
 
 .. toctree::
 
-   usage
-   api
+   neuralnet
+   
