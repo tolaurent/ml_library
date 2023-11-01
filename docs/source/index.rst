@@ -14,4 +14,5 @@ Contents
 .. toctree::
 
    neuralnet
+   optimization
    
