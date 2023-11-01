@@ -13,10 +13,10 @@ Adagrad sets the learning according to a parameter.
 - Division by the sum of the squares of all previous gradients of the parameter (learning rate will be lower in case of high values)
 
 .. math::
-  \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\sum{g_{t}^{2}} + \epsilon}} \odot g_{t}
+  \theta_{t+1} = \theta_t - \frac{\eta}{\sqrt{\sum_{i=1}^{t}{g_{i}^{2}} + \epsilon}} \odot g_{t}
    
     
 
- :math: `\theta_{t+1}` :the updated parameter vector at time step t+1
+The updated parameter vector at time step t+1 :math: `\theta_{t+1}`
 
 
