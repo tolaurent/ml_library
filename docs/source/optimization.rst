@@ -20,3 +20,27 @@ Adagrad sets the learning according to a parameter.
 The updated parameter vector at time step t+1 :math: `\theta_{t+1}`
 
 
+Adam
+----
+
+Adaptative Moment Estimation (Adam) consists of the following steps:
+
+- Computation of the exponentially weighted average of post gradients
+- Computation of the exponentiallu weighted average of the squares of past gradients
+- The average have a bias toward zero and to counteract this a bias correction is applied
+- The parameters are updated based on the calculated averages
+
+.. math::
+  m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t
+  v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2
+  \hat{m}_t = \frac{m_t}{1 - \beta_1^t}
+  \hat{v}_t = \frac{v_t}{1 - \beta_2^t}
+  \theta_{t+1} = \theta_t - \frac{\alpha}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t
+
+:math: `m(t)` is the exponentially weighted average of the past gradient at time step t
+:math: `v(t)` is the weighted average of the past squares of the gradients at time step t
+:math: `\beta_1` is the hyperparameter to be tuned for bias correction of the exponentially weighted average of the past gradients
+:math: `\beta_2` is the hyperparameter to be tuned for bias correction of the exponentially weighted average of the square of the past gradients
+:math: `\theta_{t+1}` is the parameter to be updated at time step t
+:math: `\alpha` is the learning rate
+:math: `\epsilon` is a very small value to avoid dividing by zero
