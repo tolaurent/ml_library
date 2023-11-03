@@ -30,11 +30,11 @@ This results in minimizing oscillations and faster convergence.
 
   \theta_{t+1} = \theta_{t} - \alpha v_t
   
- :math:`v(t)` is the weighted average of the past gradients at time step t
+:math:`v(t)` is the weighted average of the past gradients at time step t
 
- :math:`\alpha` is the learning rate
+:math:`\alpha` is the learning rate
 
- :math:`\beta` is the hyperparameter to be tuned
+:math:`\beta` is the hyperparameter to be tuned
 
 Adam
 ----
