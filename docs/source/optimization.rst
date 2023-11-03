@@ -19,6 +19,20 @@ Adagrad sets the learning according to a parameter.
 
 The updated parameter vector at time step t+1 :math: `\theta_{t+1}`
 
+Momentum
+--------
+
+Momentum takes into account past gradients to smooth out the update. This is based on an exponential weighted average of the gradient on previous steps. 
+This results in minimizing oscillations and faster convergence.
+
+.. math::
+  v_t = \beta v_{t-1} + (1 - \beta) g_t
+
+  \theta_{t+1} = \theta_{t} - \alpha v_t
+  
+`v(t)` is the weighted average of the past gradients at time step t
+`\alpha` is the learning rate
+`\beta` is the hyperparameter to be tuned
 
 Adam
 ----
@@ -40,24 +54,18 @@ Adaptative Moment Estimation (Adam) consists of the following steps:
   \hat{v}_t = \frac{v_t}{1 - \beta_2^t}
 
   \theta_{t+1} = \theta_t - \frac{\alpha}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t
-  
+
 `m(t)` is the exponentially weighted average of the past gradient at time step t
+
 `v(t)` is the weighted average of the past squares of the gradients at time step t
-`\beta_1` is the hyperparameter to be tuned for bias correction of the exponentially weighted average of the past gradients
+
+ :math:`\beta_1` is the hyperparameter to be tuned for bias correction of the exponentially weighted average of the past gradients
+
 `\beta_2` is the hyperparameter to be tuned for bias correction of the exponentially weighted average of the square of the past gradients
+
 `\theta_{t+1}` is the parameter to be updated at time step t
+
 `\alpha` is the learning rate
+
 `\epsilon` is a very small value to avoid dividing by zero
 
-Momentum
---------
-
-Momentum takes into account past gradients to smooth out the update. This is based on an exponential weighted average of the gradient on previous steps. 
-This results in minimizing oscillations and faster convergence.
-
-.. math::
-  v_t = \beta v_{t-1} + (1 - \beta) g_t
-
-  \theta_{t+1} = \theta_{t} - \alpha v_t
-  
-`v(t)` is the weighted average of the past gradients at time step t
