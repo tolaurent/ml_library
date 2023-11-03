@@ -44,3 +44,15 @@ Adaptative Moment Estimation (Adam) consists of the following steps:
 :math: `\theta_{t+1}` is the parameter to be updated at time step t
 :math: `\alpha` is the learning rate
 :math: `\epsilon` is a very small value to avoid dividing by zero
+
+Momentum
+--------
+
+Momentum takes into account past gradients to smooth out the update. This is based on an exponential weighted average of the gradient on previous steps. 
+This results in minimizing oscillations and faster convergence.
+
+.. math::
+  v_t = \beta v_{t-1} + (1 - \beta) g_t
+  \theta_{t+1} = \theta_{t} - \alpha \v_t
+  
+ :math: `v(t)` is the weighted average of the past gradients at time step t
